@@ -9,10 +9,10 @@
 Matriz identidad, porqque la diagonal está compuestos por solo unos y los elementos fuera de la diagonal son ceros.
 
 $$ A =
-\begin{pmatrix}
+\begin{pmatrix*}
 1 & 0 \\
 0 & 1 \\
-\end{pmatrix}
+\end{pmatrix*}
 $$
 
 MUESTRA
