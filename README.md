@@ -51,7 +51,7 @@ $$
 # OTRO EJERCICIO
 # Tecnológico de Software
 ## Materia: Fundamentos de álgebra
-## Alumno: humberto ramirez
+## Alumno: Humberto Ramirez Gruintal
 ## Actividad \#16 - Matrices doc
 
 ---
