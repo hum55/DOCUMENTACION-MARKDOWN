@@ -1,7 +1,7 @@
 # Tecnológico de Software
 ## Materia: Fundamentos de álgebra
 ## Alumno: Humberto Ramirez Gruintal
-## Actividad \#16 - Matrices doc
+## Actividad \#18 - Matrices doc
 
 ---
 
