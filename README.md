@@ -85,10 +85,5 @@ A continuación, la explicación matemática y las fórmulas de Excel utilizadas
     ```excel
     =('imagen1'!A1 * 2) + ('imagen2'!A1 * 3) + ('imagen3'!A1 * 0.5) + ('imagen4'!A1 * 4) + ('imagen5'!A1 * 1)
     ```
- \hline
-9 & 8 & 7 \\ \hline
-6 & 5 & 4 \\ \hline
-3 & 2 & 1 \\ \hline
-\end{array}
-\]
+ 
 
