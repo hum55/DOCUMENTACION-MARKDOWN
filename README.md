@@ -87,4 +87,3 @@ A continuación, la explicación matemática y las fórmulas de Excel utilizadas
     ```
  
 
-
