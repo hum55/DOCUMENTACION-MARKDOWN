@@ -1,333 +1,210 @@
 # Tecnológico de Software
 ## Materia: Fundamentos de álgebra
 ## Alumno: Humberto Ramirez Gruintal 
-## Actividad \#16 - Matrices doc
+## Actividad \#22 - Matrices doc
 
----
-### Identificación de matrices
+# Ejercicio 1: Resolver con todos los métodos
 
-Matriz identidad, porque la diagonal está compuestos por solo unos y los elementos fuera de la diagonal son ceros.
+Sistema de ecuaciones:
 
-$$ A =
-\begin{pmatrix}
-1 & 0 \\
-0 & 1 \\
-\end{pmatrix}
-$$
+1) x + y + z = 6  
+2) 2x - y + z = 3  
+3) x + 2y - z = 2  
 
-MUESTRA
+# a) Método de Gauss (Eliminación Gaussiana)
 
-Calcula la suma de A y B
+Objetivo: Llegar a una matriz escalonada.
 
-$$ A =
-\begin{pmatrix}
-1 & 2 & 3 \\
-4 & 5 & 6 \\
-\end{pmatrix}
-$$
+**Paso 1: Matriz Inicial**
 
-$$ B =
-\begin{pmatrix}
-9 & 10 & 11 \\
-12 & 13 & 14 \\
-\end{pmatrix}
-$$
+| 1 | 1 | 1 | 6 |
+|---|---|---|---|
+| 2 | -1 | 1 | 3 |
+| 1 | 2 | -1 | 2 |
 
-$$ A + B =
-\begin{pmatrix}
-1 + 9 & 2 + 10 & 3 + 11 \\
-4 + 12 & 5 + 13 & 6 + 14 \\
-\end{pmatrix}
-$$
+**Paso 2: Hacer ceros debajo del primer 1**
 
-$$ A + B =
-\begin{pmatrix}
-10 & 12 & 14 \\
-16 & 18 & 20 \\
-\end{pmatrix}
-$$
+- F2 = F2 - 2F1  
+- F3 = F3 - F1  
 
----
-# OTRO EJERCICIO
-# Tecnológico de Software
-## Materia: Fundamentos de álgebra
-## Alumno: Humberto Ramirez Gruintal
-## Actividad \#16 - Matrices doc
+| 1 | 1 | 1 | 6 |
+|---|---|---|---|
+| 0 | -3 | -1 | -9 |
+| 0 | 1 | -2 | -4 |
 
----
-# Identificación de matrices
-## EJERCICIO 1
+**Paso 3: Intercambiar F2 y F3**
 
-### Matriz identidad, porque la diagonal está compuesta por solo unos y los elementos fuera de la diagonal son ceros.
-Además, es importante notar que al multiplicarla por otra matriz, esta no modifica los valores de la misma.
+| 1 | 1 | 1 | 6 |
+|---|---|---|---|
+| 0 | 1 | -2 | -4 |
+| 0 | -3 | -1 | -9 |
 
-$$ A 
-\begin{pmatrix}
-1 & 0 \\
-0 & 1 \\
-\end{pmatrix}
-$$
+**Paso 4: Eliminar el -3**
 
-### Matriz diagonal, todos los valores fuera de la diagonal tienen un valor de 0.
-Los elementos en la diagonal pueden ser distintos de 1, lo importante es que estén alineados diagonalmente.
+- F3 = F3 + 3F2
 
-$$ B
-\begin{pmatrix}
-3 & 0 & 0 \\
-0 & -2 & 0 \\
-0 & 0 & 5\\
-\end{pmatrix}
-$$
+| 1 | 1 | 1 | 6 |
+|---|---|---|---|
+| 0 | 1 | -2 | -4 |
+| 0 | 0 | -7 | -21 |
 
-### Matriz cuadrada, tiene el mismo número de filas y columnas.
-Este tipo de matriz permite calcular determinantes e inversas.
-
-$$ C
-\begin{pmatrix}
-2 & 1 & 4 \\
-1 & 3 & 5 \\
-4 & 5 & 6 \\
-\end{pmatrix}
-$$
-
-### Matriz triangular superior. Todos los elementos debajo de la diagonal principal son cero.
-Se utiliza frecuentemente en factorización de matrices.
-
-$$ D
-\begin{pmatrix}
-1 & 2 & 3 \\
-0 & 4 & 5 \\
-0 & 0 & 6 \\
-\end{pmatrix}
-$$
+**Paso 5: Sustitución hacia atrás**
+- z = 3  
+- y = 2  
+- x = 1  
 
 ---
 
-## EJERCICIO 2
+# b) Método de Gauss-Jordan
 
-### Suma de matrices A y B
-Para sumar matrices, se suman elemento a elemento. Esto solo es posible si ambas matrices tienen la misma dimensión.
+Partimos de:
 
-$$ A =
-\begin{pmatrix}
-2 & -1  \\
-3 & 4  \\
-\end{pmatrix}
-$$
+| 1 | 1 | 1 | 6 |
+|---|---|---|---|
+| 0 | 1 | -2 | -4 |
+| 0 | 0 | -7 | -21 |
 
-$$ B =
-\begin{pmatrix}
-5 & 2  \\
--1 & 3 \\
-\end{pmatrix}
-$$
+**Paso 1: F3 / -7**
 
-$$ A + B =
-\begin{pmatrix}
-2 + 5 & -1 + 2  \\
-3 + -1 & 4 + 3 \\
-\end{pmatrix}
-$$
+| 1 | 1 | 1 | 6 |
+|---|---|---|---|
+| 0 | 1 | -2 | -4 |
+| 0 | 0 | 1 | 3 |
 
-$$ A + B =
-\begin{pmatrix}
-7 & 1 \\
-2 & 7 \\
-\end{pmatrix}
-$$
+**Paso 2: Hacer ceros arriba**
 
----
+- F2 = F2 + 2F3  
+- F1 = F1 - F3  
 
-### Resta de matrices (2A - B)
-Primero se multiplica cada elemento de A por 2. Después, se resta elemento a elemento la matriz B.
+| 1 | 1 | 0 | 3 |
+|---|---|---|---|
+| 0 | 1 | 0 | 2 |
+| 0 | 0 | 1 | 3 |
 
-$$ 2A  =
-\begin{pmatrix}
-4 & -2 \\
-6 & 8 \\
-\end{pmatrix}
-$$
+**Paso 3: F1 = F1 - F2**
 
-$$ 2A - B =
-\begin{pmatrix}
-4 - 5 & -2 - 2  \\
-6 - -1 & 8 - 3 \\
-\end{pmatrix}
-$$
+| 1 | 0 | 0 | 1 |
+|---|---|---|---|
+| 0 | 1 | 0 | 2 |
+| 0 | 0 | 1 | 3 |
 
-$$ 2A - B =
-\begin{pmatrix}
--1 & -4 \\
-7 & 5 \\
-\end{pmatrix}
-$$
+Resultados: x = 1, y = 2, z = 3
 
 ---
 
-### Producto AB
-Para multiplicar matrices, se toma el producto punto entre filas de A y columnas de B.
+# c) Método de Matriz Inversa
 
-$$ AB =
-\begin{pmatrix}
-(2 * 5 + -1 * -1) & (2 * 2 + -1 * 3)  \\
-(3 * 5 + 4 * -1) & (3 * 2 + 4 * 3) \\
-\end{pmatrix}
-$$
+Matriz A:
 
-$$ AB =
-\begin{pmatrix}
-11 & 1 \\
-11 & 18 \\
-\end{pmatrix}
-$$
+| 1 | 1 | 1 |
+|---|---|---|
+| 2 | -1 | 1 |
+| 1 | 2 | -1 |
 
-Este resultado demuestra que la multiplicación de matrices no es elemento a elemento.
+Det = 7
 
----
+**Inversa (1/7 · adj(A))**
 
-### Producto BA (no conmutativo)
-Se demuestra que AB ≠ BA en la mayoría de los casos.
+| -1 | 3 | 2 |
+|----|---|---|
+| 3 | -2 | 1 |
+| 5 | -1 | -3 |
 
-$$ BA =
-\begin{pmatrix}
-(5 * 2 + 2 * 3) & (5 * -1 + 2 * 4)  \\
-(-1 * 2 + 3 * 3) & (-1 * -1 + 3 * 4) \\
-\end{pmatrix}
-$$
-
-$$ BA=
-\begin{pmatrix}
-16 & 3 \\
-7 & 13 \\
-\end{pmatrix}
-$$
-
-Esto comprueba que la multiplicación matricial **no es conmutativa**.
+**Multiplicación por B = (6,3,2)**  
+x = 1  
+y = 2  
+z = 3  
 
 ---
 
-### Transpuesta de A
-La transpuesta consiste en intercambiar filas por columnas.
+# d) Regla de Cramer
 
-$$ AT =
-\begin{pmatrix}
-2 & 3  \\
--1 & 4  \\
-\end{pmatrix}
-$$
+Det(A) = 7
 
----
+**Determinante X**
 
-# EJERCICIO 3
+| 6 | 1 | 1 |
+|---|---|---|
+| 3 | -1 | 1 |
+| 2 | 2 | -1 |
 
-Multiplicación de cadena
+Det X = 7  
+x = 7/7 = 1
 
-Las multiplicaciones deben realizarse siguiendo el orden indicado, ya que aunque se cumple la propiedad asociativa, los resultados intermedios pueden cambiar.
+**Determinante Y**
 
-$$ A =
-\begin{pmatrix}
-1 & 2  \\
-3 & 4  \\
-\end{pmatrix}
-$$
+| 1 | 6 | 1 |
+|---|---|---|
+| 2 | 3 | 1 |
+| 1 | 2 | -1 |
 
-$$ B =
-\begin{pmatrix}
-2 & 0  \\
-1 & 3 \\
-\end{pmatrix}
-$$
+Det Y = 14  
+y = 14/7 = 2
 
-$$ C =
-\begin{pmatrix}
-1 & 1  \\
-0 & 2 \\
-\end{pmatrix}
-$$
+**Determinante Z**
+
+| 1 | 1 | 6 |
+|---|---|---|
+| 2 | -1 | 3 |
+| 1 | 2 | 2 |
+
+Det Z = 21  
+z = 21/7 = 3
 
 ---
 
-### Parte 1: AB
+# Ejercicio 2: Identificar tipo de solución
 
-$$ AB =
-\begin{pmatrix}
-(1 * 2 + 2 * 1) & (1 * 0 + 2 * 3)  \\
-(3 * 2 + 4 * 1) & (3 * 0 + 4 * 3) \\
-\end{pmatrix}
-$$
+### a)
+x + y = 3  
+2x + 2y = 6  
 
-$$ AB =
-\begin{pmatrix}
-4 & 6 \\
-10 & 12 \\
-\end{pmatrix}
-$$
+→ Infinitas soluciones.
 
----
+### b)
+x + y = 3  
+2x + 2y = 7  
 
-### Parte 2: (AB)C
-Se toma la matriz resultante AB y se multiplica por C.
+→ Ninguna solución.
 
-$$ (AB)C =
-\begin{pmatrix}
-(4 * 1 + 6 * 0) & (4 * 1 + 6 * 2)  \\
-(10 * 1 + 12 * 0) & (10 * 0 + 12 * 2) \\
-\end{pmatrix}
-$$
+### c)
+x + y = 3  
+x − y = 1  
 
-$$ (AB)C =
-\begin{pmatrix}
-4 & 16 \\
-10 & 24 \\
-\end{pmatrix}
-$$
+→ Solución única.
 
 ---
 
-## Verificación de que (AB)C = A(BC)
+# Ejercicio 3: Sistema 4x4
 
-Esta propiedad es conocida como **asociativa** en la multiplicación de matrices.
+Sistema:
 
-### Parte 1: BC
+1) x + y + z + w = 10  
+2) 2x + y − z + w = 5  
+3) x − y + z − w = 1  
+4) x + y − z + 2w = 8  
 
-$$ BC =
-\begin{pmatrix}
-(2 * 1 + 0 * 0) & (2 * 1 + 0 * 2)  \\
-(1 * 1 + 3 * 0) & (1 * 1 + 3 * 2) \\
-\end{pmatrix}
-$$
+Soluciones:
 
-$$ BC =
-\begin{pmatrix}
-2 & 2 \\
-1 & 7 \\
-\end{pmatrix}
-$$
+- z = 3.5  
+- w = 5  
+- x = 2  
+- y = -0.5  
 
 ---
 
-### Parte 2: A(BC)
+# Ejercicio 4: Aplicación práctica (Mix de Productos)
 
-$$ A(BC) =
-\begin{pmatrix}
-(1 * 2 + 2 * 1) & (1 * 2 + 2 * 7)  \\
-(3 * 2 + 4 * 1) & (3 * 2 + 4 * 7) \\
-\end{pmatrix}
-$$
+Sistema:
 
-$$ A(BC) =
-\begin{pmatrix}
-4 & 16 \\
-10 & 34 \\
-\end{pmatrix}
-$$
+- 2P + 1S + 3U = 100  
+- 3P + 1S + 2U = 120  
+- 1P + 2S + 1U = 80  
+
+Resultados:
+
+- P = 27.5  
+- S = 22.5  
+- U = 7.5  
 
 ---
-
-Con esta verificación podemos confirmar que la propiedad asociativa se cumple:  
-$$(AB)C = A(BC)$$
-
-
-
-
-
